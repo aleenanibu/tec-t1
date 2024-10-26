@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Gradient Background</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #deeaee, #b1cbbb, #eea29a, #c94c4c);
+      background-size: 300% 300%;
+      animation: gradientAnimation 8s ease infinite;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Text Styling */
+    .title {
+      font-size: 5em;
+      color: #050505;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold; /* Make text bold */
+      animation: textAnimation 1.5s ease-in-out infinite; /* Apply animation */
+    }
+
+    @keyframes textAnimation {
+      0%, 100% {
+        transform: scale(1); /* Original size */
+        opacity: 1; /* Fully visible */
+      }
+      50% {
+        transform: scale(1.1); /* Slightly larger */
+        opacity: 0.8; /* Slightly faded */
+      }
+    }
+
+    /* Rectangular Button Styling */
+    .get-started-button {
+      width: 200px;                /* Width for rectangle */
+      height: 60px;                /* Height for rectangle */
+      font-size: 1.2em;            /* Increased font size */
+      color: #000;
+      background-color: #92a8d1;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .get-started-button:hover {
+      background-color: #deeaee;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">RANDOM GENERATOR</div>
+  <a href="newpage.html" class="get-started-button">Get Started</a>
+</body>
+</html>

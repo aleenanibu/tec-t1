@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excuse Generator</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #deeaee, #b1cbbb, #eea29a, #c94c4c);
+      background-size: 300% 300%;
+      animation: gradientAnimation 8s ease infinite;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .title {
+      font-size: 3em;
+      color: #050505;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .question {
+      font-size: 1.5em;
+      color: #050505;
+      margin: 20px;
+    }
+
+    .excuse-input, .name-input {
+      width: 300px;
+      height: 40px;
+      font-size: 1em;
+      padding: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #92a8d1;
+      border-radius: 5px;
+    }
+
+    .theme-dropdown {
+      width: 320px;
+      height: 40px;
+      font-size: 1em;
+      margin-bottom: 20px;
+      border: 1px solid #92a8d1;
+      border-radius: 5px;
+    }
+
+    .generate-excuse-button, .back-button, .share-button, .feedback-button {
+      width: 200px;
+      height: 60px;
+      font-size: 1.2em;
+      color: #000;
+      background-color: #92a8d1;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      margin: 10px;
+      text-decoration: none;
+    }
+
+    .generate-excuse-button:hover, .back-button:hover, .share-button:hover, .feedback-button:hover {
+      background-color: #deeaee;
+    }
+
+    .excuse {
+      font-size: 1.5em;
+      color: #050505;
+      margin: 20px;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title">Excuse Generator</div>
+  <div class="question">What is the occasion for your excuse?</div>
+  
+  <input type="text" id="userExcuse" class="excuse-input" placeholder="Type your excuse here...">
+  <input type="text" id="userName" class="name-input" placeholder="Your Name...">
+  
+  <select id="theme" class="theme-dropdown">
+    <option value="funny">Funny</option>
+    <option value="work">Work-related</option>
+    <option value="sarcastic">Sarcastic</option>
+  </select>
+  
+  <button class="generate-excuse-button" onclick="generateExcuse()">Generate Excuse</button>
+  <a href="newpage.html" class="back-button">Back to Options</a>
+  
+  <div id="excuse" class="excuse">Your excuse will appear here.</div>
+
+  <!-- Share and Feedback buttons after the generated text -->
+  <button class="share-button" onclick="shareText()">Share</button>
+  <button class="feedback-button" onclick="promptFeedback()">Feedback</button>
+
+  <script>
+    const excuses = {
+      funny: [
+        "I didn't do my homework because my dog ate it.",
+        "I accidentally Wingardium Leviosa-ed it into the next dimension.",
+        "I lost my notes in a time machine accident."
+      ],
+      work: [
+        "I was busy saving the world from a villainous plot at work.",
+        "I lost my presentation in a coffee spill incident.",
+        "My computer crashed because it couldn't handle my genius."
+      ],
+      sarcastic: [
+        "Oh, you know, I just thought I'd skip today for fun.",
+        "Because clearly, I have better things to do than work."
+      ]
+    };
+
+    function generateExcuse() {
+      const userInput = document.getElementById("userExcuse").value;
+      const userName = document.getElementById("userName").value || "Friend";
+      const selectedTheme = document.getElementById("theme").value;
+      
+      const randomIndex = Math.floor(Math.random() * excuses[selectedTheme].length);
+      const generatedExcuse = `For "${userInput}", ${userName}, here's an excuse: ${excuses[selectedTheme][randomIndex]}`;
+      document.getElementById("excuse").innerText = generatedExcuse;
+    }
+
+    function shareText() {
+      const textToShare = document.getElementById("excuse").innerText;
+      const shareData = {
+        title: 'Generated Excuse',
+        text: textToShare,
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData)
+          .then(() => console.log('Shared successfully'))
+          .catch(console.error);
+      } else {
+        alert("Sharing not supported on this browser. Copy the link and share it manually!");
+      }
+    }
+
+    function promptFeedback() {
+      const feedback = prompt("We'd love to hear your thoughts! Please enter your feedback:");
+      if (feedback) {
+        alert("Thank you for your feedback!");
+      } else {
+        alert("No feedback entered.");
+      }
+    }
+  </script>
+</body>
+</html>

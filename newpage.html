@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Generator - Choose an Option</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #deeaee, #b1cbbb, #eea29a, #c94c4c);
+      background-size: 300% 300%;
+      animation: gradientAnimation 8s ease infinite;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Title Styling */
+    .title {
+      font-size: 3em;
+      color: #050505;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold; /* Make text bold */
+    }
+
+    /* Instruction Text Styling */
+    .instruction {
+      font-size: 1.5em;
+      color: #050505;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    /* Rectangular Button Styling */
+    .option-button {
+      width: 250px;                /* Width for rectangle */
+      height: 60px;                /* Height for rectangle */
+      font-size: 1.2em;            /* Increased font size */
+      color: #000;
+      background-color: #92a8d1;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      margin: 10px;                /* Margin for spacing between buttons */
+      text-decoration: none;
+    }
+
+    .option-button:hover {
+      background-color: #deeaee;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">Choose an Option</div>
+  
+  <a href="excuse_generator.html" class="option-button">Excuse Generator</a>
+  <a href="compliment_generator.html" class="option-button">Compliment Generator</a>
+  <a href="fact_generator.html" class="option-button">Fact Generator</a>
+  
+  <a href="index.html" class="option-button">Back</a>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fact Generator</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #deeaee, #b1cbbb, #eea29a, #c94c4c);
+      background-size: 300% 300%;
+      animation: gradientAnimation 8s ease infinite;
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Title Styling */
+    .title {
+      font-size: 3em;
+      color: #050505;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    /* Fact Display Styling */
+    .fact {
+      font-size: 1.5em;
+      color: #050505;
+      margin: 20px;
+      max-width: 600px;
+    }
+
+    /* Button Styling */
+    .back-button, .new-fact-button, .share-button, .feedback-button {
+      width: 200px;
+      height: 60px;
+      font-size: 1.2em;
+      color: #000;
+      background-color: #92a8d1;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      margin: 10px;
+      text-decoration: none;
+    }
+
+    .back-button:hover, .new-fact-button:hover, .share-button:hover, .feedback-button:hover {
+      background-color: #deeaee;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title">Fact Generator</div>
+  <div id="fact" class="fact">Loading a funny fact...</div>
+  
+  <button class="new-fact-button" onclick="generateFact()">New Fact</button>
+  <button class="share-button" onclick="shareFact()">Share</button>
+  <button class="feedback-button" onclick="promptFeedback()">Feedback</button>
+  <a href="newpage.html" class="back-button">Back to Options</a>
+
+  <script>
+    const facts = [
+      "Humans are the only animals that blush.",
+      "A group of flamingos is called a 'flamboyance'.",
+      "Bananas are berries, but strawberries aren't!",
+      "A shrimp's heart is located in its head.",
+      "Octopuses have three hearts.",
+      "In Switzerland, it's illegal to own just one guinea pig.",
+      "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible.",
+      "The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes.",
+      "A jiffy is an actual unit of time. It is 1/100th of a second.",
+      "Koalas have fingerprints that are so similar to humans that they can taint crime scenes.",
+      "Cows have best friends and get stressed when they are separated."
+    ];
+
+    // Function to generate a random fact
+    function generateFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      document.getElementById("fact").innerText = facts[randomIndex];
+    }
+
+    // Function to share the fact text
+    function shareFact() {
+      const factText = document.getElementById("fact").innerText;
+      const shareData = {
+        title: 'Did You Know?',
+        text: factText,
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData)
+          .then(() => console.log('Shared successfully'))
+          .catch(console.error);
+      } else {
+        alert("Sharing not supported on this browser. Copy the text and share manually!");
+      }
+    }
+
+    // Function to collect feedback
+    function promptFeedback() {
+      const feedback = prompt("What did you think of this fact?");
+      if (feedback) {
+        alert("Thank you for your feedback!");
+      } else {
+        alert("No feedback entered.");
+      }
+    }
+
+    // Generate a fact on page load
+    window.onload = generateFact;
+  </script>
+</body>
+</html>

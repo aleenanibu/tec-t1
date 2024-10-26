@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compliment Generator</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #deeaee, #b1cbbb, #eea29a, #c94c4c);
+      background-size: 300% 300%;
+      animation: gradientAnimation 8s ease infinite;
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Title Styling */
+    .title {
+      font-size: 3em;
+      color: #050505;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    /* Compliment Display Styling */
+    .compliment {
+      font-size: 1.5em;
+      color: #050505;
+      margin: 20px;
+      max-width: 600px;
+    }
+
+    /* Button Styling */
+    .back-button, .new-compliment-button, .share-button, .feedback-button {
+      width: 200px;
+      height: 60px;
+      font-size: 1.2em;
+      color: #000;
+      background-color: #92a8d1;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      margin: 10px;
+      text-decoration: none;
+    }
+
+    .back-button:hover, .new-compliment-button:hover, .share-button:hover, .feedback-button:hover {
+      background-color: #deeaee;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title">Compliment Generator</div>
+  <div id="compliment" class="compliment">Loading a compliment...</div>
+  
+  <button class="new-compliment-button" onclick="generateCompliment()">New Compliment</button>
+  <button class="share-button" onclick="shareCompliment()">Share</button>
+  <button class="feedback-button" onclick="promptFeedback()">Feedback</button>
+  <a href="newpage.html" class="back-button">Back to Options</a>
+
+  <script>
+    const compliments = [
+      "I always feel more intelligent after reading your work",
+      "It’s really difficult to underestimate you.",
+      "Your haircut makes your nose look smaller",
+      "You look really nice in this light.",
+      "That’s a beautiful photo of you. I didn’t recognize you at first.",
+      "You’re not as dumb as you look.",
+      "I don’t care what others say about you. You’re alright in my book",
+      "Your Instagram makes you seem so fun!",
+      "I didn’t expect you to get the job - Congratulations!",
+      "I wish I was as relaxed as you are about messiness",
+      "You’re so charming when you make an effort",
+      "Those earrings are so nice. My grandma would love them",
+      "Your house feels so cozy and lived in",
+      "Well, that’s a level of incompetence I’ve never seen before",
+      "You’re pretty… on the inside",
+      "That’s not the ugliest shirt I’ve seen you wear",
+      "You might not be the prettiest, but you’re definitely the funniest!",
+      "You clean up nice",
+      "You’re smarter than two dumb guys",
+    ];
+
+    // Function to generate a random compliment
+    function generateCompliment() {
+      const randomIndex = Math.floor(Math.random() * compliments.length);
+      document.getElementById("compliment").innerText = compliments[randomIndex];
+    }
+
+    // Function to share the compliment text
+    function shareCompliment() {
+      const complimentText = document.getElementById("compliment").innerText;
+      const shareData = {
+        title: 'Generated Compliment',
+        text: complimentText,
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData)
+          .then(() => console.log('Shared successfully'))
+          .catch(console.error);
+      } else {
+        alert("Sharing not supported on this browser. Copy the text and share manually!");
+      }
+    }
+
+    // Function to collect feedback
+    function promptFeedback() {
+      const feedback = prompt("What did you think of the compliment?");
+      if (feedback) {
+        alert("Thank you for your feedback!");
+      } else {
+        alert("No feedback entered.");
+      }
+    }
+
+    // Generate a compliment on page load
+    window.onload = generateCompliment;
+  </script>
+</body>
+</html>
