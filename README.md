@@ -13,10 +13,10 @@
 - Member 3: ANANTHASREE BIJU - SCMS SCHOOL OF ENGINEERING AND TECHNOLOGY
 
 ### Project Description
-USERS CAN HEAR A RANDOM FACTH , CREATE THE PERFECT EXCUSE OR GET A COMPLIMENT TO BOOST USERSELF
+USERS CAN HEAR A RANDOM FACT , CREATE THE PERFECT EXCUSE OR GET A COMPLIMENT TO BOOST YOURSELF
 
 ### The Problem (that doesn't exist)
-IT'S HARD TO MAKE THE PERFECT EXCUSE SO THIS IS THE ULTIMATE SOLUTION TO THAT PROMBLEM . IT ALSO GIVES TO COMPLIMENT WHEN YOU ARE DOWN AND LEARN MORE FACTS WITH FACE GENERATOR
+IT'S HARD TO MAKE THE PERFECT EXCUSE SO THIS IS THE ULTIMATE SOLUTION TO THAT PROMBLEM . IT ALSO GIVES TO COMPLIMENT WHEN YOU ARE DOWN AND LEARN MORE FACTS WITH FACT GENERATOR
 
 ### The Solution (that nobody asked for)
 WITH A WEBSITE THAT GENERATOR FACT,EXCUSE AND COMPLIMENT
@@ -30,59 +30,46 @@ For Software:
 ### Implementation
 For Software:
 # Installation
-[commands]
+HTML CSS SUPPORT
 
 # Run
-[commands]
+.save your code as choose_a_name. html to your desktop.
+.right click on your choose_a_name. html file on your desktop and choose your favourite browser from the open with context menu, e.g. internet explorer, chrome, edge or any other web browser you have.
 
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![FRONT PAGE](https://github.com/user-attachments/assets/402fa34b-df26-4ace-8ec3-87b064307c96)
+This is our front page . This opens when we open our website . On clicking get started front page opens with options excuse generation , compliment generator , fact generator.
+![NEXT PAGE](https://github.com/user-attachments/assets/e9d5bc86-840f-4f0f-be0c-3ec8ab5719e3)
+Then select your choice.
+If choice is excuse generator . The excuse generator page opens.
+![EXCUSE GENERATOR](https://github.com/user-attachments/assets/13a669fd-f968-4ab4-9aeb-225a24725a74)
+User can input reason , name , and customise the excuse accordingly. These excuse can be share using share option and feedbacks can be recorded using feedback option.
+![SHARE OPTION](https://github.![FEEDBACK OPTION](https://github.com/user-attachments/assets/d8b3f85a-541b-4cc2-841b-e287b187db41)
+com/user-attachments/assets/28ba2a1a-9358-4c45-9510-eed2456f6254)
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+If user choose compliment generator
+![COMPLIMENT GENERATOR](https://github.com/user-attachments/assets/2b8c89be-7383-4ea5-a206-45423546504b)
+opens . then we can generator another compliment , share compliment and give feedbacks.
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+If user chooses fact generator
+![FACT GENERATOR](https://github.com/user-attachments/assets/257f652f-06d8-4b4b-8a60-ec8a7bf1679a) opens were you can see a random fact , share that fact and give feedbacks.
 
-For Hardware:
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
 
-# Additional Demos
-[Add any extra demo materials/links]
+
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- ALEENA NIBU: newpage.html,fact_generator,compliment generator
+- ANAGHA TR: excuse_generator.html
+- ANANTHASREE BIJU: index.html
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
